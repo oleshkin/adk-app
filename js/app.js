@@ -14,9 +14,9 @@
 		//param: 'Mercury',
 		courrier: 'TNT',
 		amount: 2,
-		weight: 179.5,
+		weight: 179,
 		longstay: false,
-		gone: false,
+		gone: false
 	},
 	{
 		client: 'Sanqch',
@@ -27,7 +27,7 @@
 		amount: 2,
 		weight: 179.5,
 		longstay: false,
-		gone: false,
+		gone: false
 	}
 	];
 

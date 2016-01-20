@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="warehouse">
+<html lang="en" ng-app="warehouse"> 
+<!-- "ng-smth" - directives -->
 <head>
 	<meta charset="UTF-8">
 	<title>adk app</title>
@@ -10,9 +11,9 @@
 	<script src="js/app.js"></script>
 
 	<div ng-controller="WarehouseController as warehouse">
-		<div ng-repeat="freight in warehouse.freights">
+		<div class="" ng-repeat="freight in warehouse.freights">
 			<div ng-hide="freight.gone">
-				<h1>{{freight.supplier}} / {{freight.amount}} - {{freight.weight}}kg </h1>
+				<h1>{{freight.supplier}} / {{freight.amount}} - {{freight.weight | number: 2}}kg </h1>
 				<h2>for {{freight.client}} from {{freight.courrier}}<h2>
 				<button ng-show="freight.longstay"> Long stay </button>
 			</div>
