@@ -2,6 +2,18 @@
 (function() {
 	var app = angular.module('warehouse', []); // 'module_name', [dependancies]
 
+	app.controller('PanelController', function() {
+		this.tab = 1; 
+
+		this.selectTab = function(setTab) {
+			this.tab = setTab;
+		};
+		this.isSelected = function(checkTab) {
+			return this.tab === checkTab;
+		}
+
+	});
+
 	app.controller('WarehouseController', function(){ 
 		this.freights = items;
 	});
@@ -26,7 +38,24 @@
 				filetype: 'pdf',
 				filename: '11912.pdf'
 			}
-			]
+			],
+		comments: [
+			{
+				date: 26122015,
+				text: 'Half went by legs',
+				author: 'A'
+			},
+			{
+				date: 26122015,
+				text: 'Half went by legs',
+				author: 'A'
+			},
+			{
+				date: 26122015,
+				text: 'Half went by legs',
+				author: 'A'
+			}
+		]
 	},
 	{
 		client: 'Sanqch',
@@ -47,7 +76,25 @@
 				filetype: 'txt',
 				filename: '124.txt'
 			}
-			]
+		],
+		comments: [
+			{
+				date: 26122015,
+				text: 'Half went by legs',
+				author: 'A'
+			},
+			{
+				date: 26122015,
+				text: 'Half went by legs',
+				author: 'A'
+			},
+			{
+				date: 26122015,
+				text: 'Half went by legs',
+				author: 'A'
+			}
+		]
+
 	},
 	{
 		client: 'Sanqch',
@@ -68,7 +115,8 @@
 				filetype: 'rar',
 				filename: '11912.rar'
 			}
-			]
+		],
+		comments: []
 	}
 	];
 
