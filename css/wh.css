@@ -4,3 +4,10 @@
    margin: 10 0 0 10px;
    width: 50%;
 }
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
+}

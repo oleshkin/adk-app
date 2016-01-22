@@ -14,6 +14,15 @@
 
 	});
 
+	app.controller('CommentController', function() {
+		this.comment = {};
+
+		this.addItem = function(freight)  {
+			freight.comments.push(this.comment);
+			this.comment = {};
+		}
+	});
+
 	app.controller('WarehouseController', function(){ 
 		this.freights = items;
 	});

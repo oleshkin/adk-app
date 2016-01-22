@@ -45,8 +45,20 @@
 						<blockquote ng-repeat="comment in freight.comments">
 						<b>{{comment.date}}</b> by <cite>{{comment.author}}</cite><br>
 						{{comment.text}}
-						
 						</blockquote>
+
+						<form name="commentForm" ng-controller="CommentController as commentCtrl" ng-submit="commentForm.$valid && commentCtrl.addItem(freight)" novalidate>
+						<blockquote>
+						<b>{{commentCtrl.comment.date}}</b> by <cite>{{commentCtrl.comment.author}}</cite><br>
+						{{commentCtrl.comment.text}}
+						</blockquote>
+							<label>Date:</label> <input type="text" name="date" ng-model="commentCtrl.comment.date" required><br>
+							<label>Name:</label> <input type="text" name="author" ng-model="commentCtrl.comment.author" required>
+
+							<textarea name="text" ng-model="commentCtrl.comment.text" required></textarea>
+							<div> commentForm is {{commentForm.$valid}}</div>
+							<input type="submit" name="submit" value="submit">
+						</form>
 					</div>
 				</section>
 			</div>
