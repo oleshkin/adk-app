@@ -27,11 +27,14 @@
 						<li ng-class="{ active:panel.isSelected(3) }"> 
 							<a href ng-click="panel.selectTab(3)">Comments</a></li>
 					</ul>
+
+					<!-- Descr tab -->
 					<div class="panel" ng-show="panel.isSelected(1)">
 						<h4>Description</h4>
 						<p>{{freight.courrier}} --> {{freight.amount}} [{{freight.weight | number: 2}}kg ] </p>
 					</div>
 
+					<!-- Files tab -->
 					<div class="panel" ng-show="panel.isSelected(2)">
 						<h4>Files</h4>
 						<ul class="img-thumbnails clearfix">
@@ -40,19 +43,21 @@
 							</li>
 						</ul>
 					</div>
+
+					<!-- Comments tab -->
 					<div class="panel" ng-show="panel.isSelected(3)">
 						<h4>Comments</h4>
 						<blockquote ng-repeat="comment in freight.comments">
-						<b>{{comment.date}}</b> by <cite>{{comment.author}}</cite><br>
+						<b><b>[{{comment.created | date: 'dd.mm.yy'}}]</b></b> <cite>{{comment.author}}</cite>:
 						{{comment.text}}
 						</blockquote>
 
 						<form name="commentForm" ng-controller="CommentController as commentCtrl" ng-submit="commentForm.$valid && commentCtrl.addItem(freight)" novalidate>
 						<blockquote>
-						<b>{{commentCtrl.comment.date}}</b> by <cite>{{commentCtrl.comment.author}}</cite><br>
+						<cite>{{commentCtrl.comment.author}}:</cite>
 						{{commentCtrl.comment.text}}
 						</blockquote>
-							<label>Date:</label> <input type="text" name="date" ng-model="commentCtrl.comment.date" required><br>
+							<!-- <label>Date:</label> <input type="text" name="date" ng-model="commentCtrl.comment.date" required><br> -->
 							<label>Name:</label> <input type="text" name="author" ng-model="commentCtrl.comment.author" required>
 
 							<textarea name="text" ng-model="commentCtrl.comment.text" required></textarea>

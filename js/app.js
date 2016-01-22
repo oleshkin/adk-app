@@ -18,6 +18,7 @@
 		this.comment = {};
 
 		this.addItem = function(freight)  {
+			this.comment.created = Date.now();
 			freight.comments.push(this.comment);
 			this.comment = {};
 		}
@@ -50,17 +51,17 @@
 			],
 		comments: [
 			{
-				date: 26122015,
+				created: 1397490980837,
 				text: 'Half went by legs',
 				author: 'A'
 			},
 			{
-				date: 26122015,
+				created: 1397490980837,
 				text: 'Half went by legs',
 				author: 'A'
 			},
 			{
-				date: 26122015,
+				created: 1397490980837,
 				text: 'Half went by legs',
 				author: 'A'
 			}
@@ -88,17 +89,17 @@
 		],
 		comments: [
 			{
-				date: 26122015,
+				created: 1397490980837,
 				text: 'Half went by legs',
 				author: 'A'
 			},
 			{
-				date: 26122015,
+				created: 1397490980837,
 				text: 'Half went by legs',
 				author: 'A'
 			},
 			{
-				date: 26122015,
+				created: 1397490980837,
 				text: 'Half went by legs',
 				author: 'A'
 			}
